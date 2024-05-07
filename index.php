@@ -16,29 +16,30 @@ include 'templates/header.php';
 ?>
 
 <!-- HTML content for the homepage -->
-<div class="container hero">
+<div class="hero">
     <h1>Welcome to Restaurant Reservation System</h1>
     <p>Make reservations for your favorite restaurants.</p>
-    <!-- hero image along with button -->
+    <img src="./imgs/table__hero.jpg" alt="hero table image">
+    <button>Get started</button>
+
 </div>
 
-<section class="restaurants">
+<section class="restaurants__cards">
     <h2>Choose a restaurant:</h2>
     <?php foreach ($restaurants as $restaurant) : ?>
-        <h2><?php echo htmlspecialchars($restaurant['name']); ?></h2>
-        <p><?php echo htmlspecialchars($restaurant['description']); ?></p>
+        <h3><?php echo htmlspecialchars($restaurant['name']); ?></h3>
+        <p>Location: <?php echo htmlspecialchars($restaurant['location']); ?></p>
+        <p>Capacity: <?php echo htmlspecialchars($restaurant['capacity']); ?></p>
+        <p>Email: <?php echo htmlspecialchars($restaurant['email']); ?></p>
     <?php endforeach; ?>
 </section>
 
-
 <section class="reservations">
-    Your reservations:
-
+    <h3>Your reservations:</h3>
     <ul>
         <li><a href="reservation.php?id=1">Reservation 1</a></li>
         <li><a href="reservation.php?id=2">Reservation 2</a></li>
         <li><a href="reservation.php?id=3">Reservation 3</a></li>
-        <!-- Add more reservations here -->
     </ul>
 </section>
 

@@ -13,14 +13,13 @@
 <body>
 
 <header>
-    <h1>PlanHead</h1>
+    <h1>TableTimes</h1>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">Rerstaurants</a></li>
+            <li><a href="reservation.html">Reservatios</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
 </header>

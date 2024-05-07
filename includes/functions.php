@@ -49,6 +49,8 @@ function get_restaurants()
 }
 
 
+
+
 // Function to sanitize input data
 function sanitize_input($data)
 {
