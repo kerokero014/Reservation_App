@@ -18,6 +18,37 @@ function connect_db()
     return $conn;
 }
 
+// query to get all restaurants
+
+function get_restaurants()
+{
+    //establish database connection
+    $conn = connect_db();
+
+    //prepare SQL query
+    $sql = "SELECT * FROM restaurants";
+
+    //initialize an empty array to store the result
+    $restaurants = [];
+
+    //execute the query
+    if ($result = $conn->query($sql)) {
+        //fetch the result as an associative array
+        while ($row = $result->fetch_assoc()) {
+            $restaurants[] = $row;
+        }
+
+        //free the result set
+        $result->free();
+    }
+
+    //close the database connection
+    $conn->close();
+
+    return $restaurants;
+}
+
+
 // Function to sanitize input data
 function sanitize_input($data)
 {

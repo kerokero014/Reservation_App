@@ -1,10 +1,12 @@
 <?php
-// Include necessary files
+// Initialize session (if you're using sessions)
+session_start();
+
+// Include database connection and functions here
 require_once 'includes/db_config.php';
 require_once 'includes/functions.php';
 
-// Initialize session (if you're using sessions)
-session_start();
+$restaurants = get_restaurants();
 
 // Check if the user is logged in or not (if you have user authentication)
 // Include login/logout/register functionality here if needed
@@ -17,18 +19,15 @@ include 'templates/header.php';
 <div class="container hero">
     <h1>Welcome to Restaurant Reservation System</h1>
     <p>Make reservations for your favorite restaurants.</p>
-    <!-- You can add more content here, such as a search form or featured restaurants -->
+    <!-- hero image along with button -->
 </div>
 
 <section class="restaurants">
-    Choose a restaurant:
-
-    <ul>
-        <li><a href="restaurant.php?id=1">Restaurant 1</a></li>
-        <li><a href="restaurant.php?id=2">Restaurant 2</a></li>
-        <li><a href="restaurant.php?id=3">Restaurant 3</a></li>
-        <!-- Add more restaurants here -->
-    </ul>
+    <h2>Choose a restaurant:</h2>
+    <?php foreach ($restaurants as $restaurant) : ?>
+        <h2><?php echo htmlspecialchars($restaurant['name']); ?></h2>
+        <p><?php echo htmlspecialchars($restaurant['description']); ?></p>
+    <?php endforeach; ?>
 </section>
 
 
