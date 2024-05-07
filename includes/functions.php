@@ -26,7 +26,7 @@ function get_restaurants()
     $conn = connect_db();
 
     //prepare SQL query
-    $sql = "SELECT * FROM restaurants";
+    $sql = "SELECT * FROM reservation.restaurant";
 
     //initialize an empty array to store the result
     $restaurants = [];
