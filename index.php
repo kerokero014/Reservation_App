@@ -28,9 +28,6 @@ include 'templates/header.php';
     <h2>Choose a restaurant:</h2>
     <?php foreach ($restaurants as $restaurant) : ?>
         <h3><?php echo htmlspecialchars($restaurant['name']); ?></h3>
-        <p>Location: <?php echo htmlspecialchars($restaurant['location']); ?></p>
-        <p>Capacity: <?php echo htmlspecialchars($restaurant['capacity']); ?></p>
-        <p>Email: <?php echo htmlspecialchars($restaurant['email']); ?></p>
     <?php endforeach; ?>
 </section>
 
