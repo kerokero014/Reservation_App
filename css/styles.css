@@ -239,6 +239,110 @@ footer {
   width: 30%;
 }
 
+/*User Creation*/
+
+.userCreation {
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 20px auto;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.userCreation input[type="text"],
+.userCreation input[type="email"],
+.userCreation input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.userCreation input[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.userCreation button {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.userCreation button:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* User Login */
+
+.loginCreation {
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 20px auto;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.loginCreation input[type="text"],
+.loginCreation input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.loginCreation input[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.loginCreation button {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.loginCreation button:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+.loginCreation p {
+  font-size: 1.1rem;
+}
+
+.loginCreation p a {
+  color: blueviolet;
+}
+
+.loginCreation p a:hover {
+  color: #333;
+}
+
+loginCreation p a:visited {
+  color: blueviolet;
+}
 /* Media Queries */
 
 @media (max-width: 768px) {
