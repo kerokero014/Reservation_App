@@ -12,11 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //sanitize input data
     $name = sanitize_input($_POST['name']);
     $email = sanitize_input($_POST['email']);
-    $phone = sanitize_input($_POST['phone']);
     $date = sanitize_input($_POST['date']);
     $time = sanitize_input($_POST['time']);
     $guests = sanitize_input($_POST['guests']);
-    $message = sanitize_input($_POST['message']);
 
     //validate email
     if (!validate_email($email)) {
@@ -39,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn = connect_db();
 
         //prepare SQL query
-        $sql = "INSERT INTO reservations (name, email, phone, date, time, guests, message) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO reservation.reservations (custuomer_name, email, date, time, guests) VALUES (?, ?, ?, ?, ?)";
 
         //initialize a new statement
         $stmt = $conn->stmt_init();
@@ -47,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //prepare the SQL query
         if ($stmt->prepare($sql)) {
             //bind parameters to the query
-            $stmt->bind_param('sssssis', $name, $email, $phone, $date, $time, $guests, $message);
+            $stmt->bind_param('sssssis', $name, $email, $date, $time, $guests);
 
             //execute the statement
             if ($stmt->execute()) {
@@ -73,8 +71,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 //inlcude reservation form template
 require 'templates/reservation_form.php';
-
-
-
-
-
