@@ -16,7 +16,7 @@
     <nav>
         <ul>
             <li><a href="/index.php">Home</a></li>
-            <li><a href="reservation.php">Reservatios</a></li>
+            <li><a href="../templates/reservation_form.php">Reservatios</a></li>
             <li><a href="../templates/Log_in.php">Log in</a></li>
         </ul>
     </nav>

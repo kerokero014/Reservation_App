@@ -7,6 +7,7 @@ require_once 'includes/db_config.php';
 require_once 'includes/functions.php';
 
 $restaurants = get_restaurants();
+$reservations = get_reservations();
 
 // Check if the user is logged in or not (if you have user authentication)
 // Include login/logout/register functionality here if needed
@@ -27,32 +28,29 @@ include 'templates/header.php';
 <section class="restaurants__cards">
     <h2>Choose a restaurant:</h2>
     <?php foreach ($restaurants as $restaurant) : ?>
-        <h3><?php echo htmlspecialchars($restaurant['name']); ?></h3>
+        <div class="Single__card">
+            <h3><?php echo htmlspecialchars($restaurant['name']); ?></h3>
+            <p><?php echo htmlspecialchars($restaurant['email']); ?></p>
+        </div>
     <?php endforeach; ?>
 </section>
 
 <section class="reservations">
-    <h3>Your reservations:</h3>
-    <ul>
-        <li><a href="reservation.php?id=1">Reservation 1</a></li>
-        <li><a href="reservation.php?id=2">Reservation 2</a></li>
-        <li><a href="reservation.php?id=3">Reservation 3</a></li>
-    </ul>
+    <h3>Reservations:</h3>
+    <div class="reservAll">
+        <ul>
+            <?php foreach ($reservations as $reservation) : ?>
+                <li>
+                    <h4>Reservation name: <?php echo htmlspecialchars($reservation['customer_name']); ?></h4>
+                    <p>Date: <?php echo htmlspecialchars($reservation['date']); ?></p>
+                    <p>Time: <?php echo htmlspecialchars($reservation['time']); ?></p>
+                    <p>Guests: <?php echo htmlspecialchars($reservation['guests']); ?></p>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </section>
 
-<section class="calendar">
-    <!-- Calendar for selecting a date -->
-    <input type="date" id="date" name="date">
-    <button type="submit">Check availability</button>
-    <!-- Display available timeslots here -->
-    <ul>
-        <li>12:00 PM</li>
-        <li>1:00 PM</li>
-        <li>2:00 PM</li>
-        <!-- Add more timeslots here -->
-    </ul>
-    <button type="submit">Reserve</button>
-</section>
 
 <?php
 // Include footer template

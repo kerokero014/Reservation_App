@@ -204,7 +204,7 @@ footer {
   background: #f4f4f4;
   padding: 1rem;
   margin-bottom: 1rem;
-  width: 50%;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -223,20 +223,124 @@ footer {
   font-size: 0.9rem;
 }
 
+.Single__card {
+  background: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
 /* Reservations */
 
 .reservations {
-  background: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 30%;
+  margin-top: 20px;
+  width: 800px;
+  margin: auto;
 }
 
+.reservations h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.reservAll ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reservAll li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.reservAll li h4 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.reservAll li p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Optional: Style for alternate list items */
+.reservAll li:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Calendar Section */
+
 .calendar {
-  background: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin: auto;
+  width: 800px;
+  justify-content: center;
+}
+
+.calendar-input {
+  margin-bottom: 20px;
+}
+
+.calendar-input input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.calendar-input button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calendar-input button:hover {
+  background-color: #0056b3;
+}
+
+.timeslots {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeslots li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.reserve-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+  background-color: #218838;
 }
 
 /*User Creation*/

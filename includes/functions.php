@@ -48,6 +48,36 @@ function get_restaurants()
     return $restaurants;
 }
 
+//function to get all reservations
+function get_reservations()
+{
+
+    //establish database connection
+    $conn = connect_db();
+
+    //prepare SQL query
+    $sql = "SELECT * FROM reservation.reservation";
+
+    //initialize an empty array to store the result
+    $reservations = [];
+
+    //execute the query
+    if ($result = $conn->query($sql)) {
+        //fetch the result as an associative array
+        while ($row = $result->fetch_assoc()) {
+            $reservations[] = $row;
+        }
+
+        //free the result set
+        $result->free();
+    }
+
+    //close the database connection
+    $conn->close();
+
+    return $reservations;
+}
+
 
 
 
