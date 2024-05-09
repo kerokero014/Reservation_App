@@ -1,5 +1,28 @@
 /* resevation app styles*/
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "hero hero"
+    "reservations restaurants";
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.reservations {
+  grid-area: reservations;
+}
+
+.restaurants {
+  grid-area: restaurants;
+}
+
 /* Global styles */
 
 * {
@@ -28,7 +51,6 @@ ul {
 /* Hero */
 
 .hero {
-  background-color: whitesmoke;
   text-align: center;
   padding: 2rem 0;
   margin-bottom: 2rem;
@@ -36,6 +58,8 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-in-out;
+  color: #333; /* A modern color scheme */
 }
 
 .hero img {
@@ -204,14 +228,12 @@ footer {
   background: #f4f4f4;
   padding: 1rem;
   margin-bottom: 1rem;
-  width: 1000px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .restaurants__cards h3 {

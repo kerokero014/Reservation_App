@@ -78,8 +78,30 @@ function get_reservations()
     return $reservations;
 }
 
+// Function to add a new reservation
+function add_reservation($customer_name, $email, $phone, $restaurant_id, $date, $time, $guests, $image)
+{
+    // Establish database connection
+    $conn = connect_db();
 
+    // Prepare SQL query
+    $sql = "INSERT INTO reservation.reservation (customer_name, email, phone, restaurant_id, date, time, guests, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
+    // Prepare the SQL statement for execution
+    $stmt = $conn->prepare($sql);
+
+    // Bind the parameters to the SQL statement
+    $stmt->bind_param("sssiissb", $customer_name, $email, $phone, $restaurant_id, $date, $time, $guests, $image);
+
+    // Execute the SQL statement
+    $stmt->execute();
+
+    // Close the statement
+    $stmt->close();
+
+    // Close the database connection
+    $conn->close();
+}
 
 // Function to sanitize input data
 function sanitize_input($data)

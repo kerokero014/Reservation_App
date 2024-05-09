@@ -7,10 +7,7 @@
 
 ## Overview
 
-lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-lorem ipsumlorem ipsumlorem ipsum
-lorem ipsumlorem ipsumlorem ipsum<br>
-    lorem ipsumlorem ipsum
+This is an web application where it allows you to reserve a table in your favorite restaurants,<br>
 
 
 ## Development Enviroment
