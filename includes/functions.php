@@ -1,6 +1,13 @@
 <?php
 // functions.php
 
+/**
+ * This file contains functions that interact with the database.
+ * CRUD operations are performed in this file.
+ * and Sanitization and validation of input data is also done in this file.
+ */
+
+ 
 // Function to establish database connection
 function connect_db()
 {
