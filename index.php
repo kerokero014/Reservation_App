@@ -21,15 +21,13 @@ include 'templates/header.php';
         <h1>Welcome to Restaurant Reservation System</h1>
         <p>Make reservations for your favorite restaurants.</p>
         <img src="./imgs/table__hero.jpg" alt="hero table image">
-        <button>Get started</button>
-
     </div>
 
     <!--Restaurant section-->
 
     <section class="restaurants__cards restaurants">
         <h2>Choose a restaurant:</h2>
-        <?php foreach ($restaurants as $restaurant) : ?>
+        <?php foreach ($restaurants as $restaurant) : ?> <!-- Loop through the restaurants array obtained from mysql db-->
             <div class="Single__card">
                 <h3><?php echo htmlspecialchars($restaurant['name']); ?></h3>
                 <p><?php echo htmlspecialchars($restaurant['email']); ?></p>
@@ -42,7 +40,7 @@ include 'templates/header.php';
         <h3>Reservations:</h3>
         <div class="reservAll">
             <ul>
-                <?php foreach ($reservations as $reservation) : ?>
+                <?php foreach ($reservations as $reservation) : ?> <!-- Loop through the reservations array obtained from mysql db-->
                     <li>
                         <h4>Reservation name: <?php echo htmlspecialchars($reservation['customer_name']); ?></h4>
                         <p>Date: <?php echo htmlspecialchars($reservation['date']); ?></p>
@@ -56,6 +54,6 @@ include 'templates/header.php';
 </div>
 
 <?php
-// Include footer template
+//  This Includes footer template
 include 'templates/footer.php';
 ?>

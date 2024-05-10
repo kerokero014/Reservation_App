@@ -7,7 +7,7 @@
  * and Sanitization and validation of input data is also done in this file.
  */
 
- 
+
 // Function to establish database connection
 function connect_db()
 {
@@ -86,19 +86,19 @@ function get_reservations()
 }
 
 // Function to add a new reservation
-function add_reservation($customer_name, $email, $phone, $restaurant_id, $date, $time, $guests, $image)
+function add_reservation($customer_name, $customer_email, $restaurant_id, $date, $time, $guests)
 {
     // Establish database connection
     $conn = connect_db();
 
     // Prepare SQL query
-    $sql = "INSERT INTO reservation.reservation (customer_name, email, phone, restaurant_id, date, time, guests, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO reservation.reservation (customer_name, customer_email, restaurant_id, date, time, guests) VALUES (?, ?, ?, ?, ?, ?)";
 
     // Prepare the SQL statement for execution
     $stmt = $conn->prepare($sql);
 
     // Bind the parameters to the SQL statement
-    $stmt->bind_param("sssiissb", $customer_name, $email, $phone, $restaurant_id, $date, $time, $guests, $image);
+    $stmt->bind_param("sssiissb", $customer_name, $customer_email, $restaurant_id, $date, $time, $guests);
 
     // Execute the SQL statement
     $stmt->execute();
@@ -109,6 +109,38 @@ function add_reservation($customer_name, $email, $phone, $restaurant_id, $date, 
     // Close the database connection
     $conn->close();
 }
+
+
+function get_all_restaurants()
+{
+    // Establish database connection
+    $conn = connect_db();
+
+    // SQL query to select all restaurants
+    $sql = "SELECT restaurant_id, name FROM reservation.restaurant";
+
+    // Execute the query
+    $result = $conn->query($sql);
+
+    // Array to store restaurant options
+    $options = array();
+
+    // Check if query was successful
+    if ($result->num_rows > 0) {
+        // Loop through each row and fetch restaurant details
+        while ($row = $result->fetch_assoc()) {
+            // Add restaurant details to options array
+            $options[$row['restaurant_id']] = $row['name'];
+        }
+    }
+
+    // Close database connection
+    $conn->close();
+
+    // Return restaurant options
+    return $options;
+}
+
 
 // Function to sanitize input data
 function sanitize_input($data)
