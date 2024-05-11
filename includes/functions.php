@@ -141,6 +141,32 @@ function get_all_restaurants()
     return $options;
 }
 
+//Function to add a new restaurant
+
+function add_restaurant($restaurant_name, $restaurant_location, $restaurant_email, $capacity)
+{
+    //establish database connection
+    $conn = connect_db();
+
+    //prepare SQL query
+    $sql = "INSERT INTO reservation.restaurant (name, location, email, capacity) VALUES (?, ?, ?, ?)";
+
+    //prepare the SQL statement for execution
+    $stmt = $conn->prepare($sql);
+
+    //bind the parameters to the SQL statement
+    $stmt->bind_param("sssi", $restaurant_name, $restaurant_location, $restaurant_email, $capacity);
+
+    //execute the SQL statement
+    $stmt->execute();
+
+    //close the statement
+    $stmt->close();
+
+    //close the database connection
+    $conn->close();
+}
+
 
 // Function to sanitize input data
 function sanitize_input($data)

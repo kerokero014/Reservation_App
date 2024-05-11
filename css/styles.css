@@ -471,6 +471,76 @@ footer {
 loginCreation p a:visited {
   color: blueviolet;
 }
+
+/* Add Restaurant */
+.add-restaurant {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.add-restaurant h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group input[type="submit"] {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+.add-restaurant button {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-restaurant button:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+.AddHere{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {

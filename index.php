@@ -9,7 +9,7 @@ require_once 'includes/functions.php';
 $restaurants = get_restaurants();
 $reservations = get_reservations();
 
-// Check if the user is logged in or not (if user authentication)
+// TODO: Check if the user is logged in or not (if user authentication)
 
 // Include header template
 include 'templates/header.php';
