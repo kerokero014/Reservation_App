@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     // Validate form data (you can add more validation as needed)
 
+
+
     // Call the add_reservation function
     if (add_reservation($customer_name, $customer_email, $restaurant_id, $date, $time, $guests)) {
         // Reservation successfully added
@@ -30,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     }
 } else {
     // If the form was not submitted, redirect user to the homepage or display an error message
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }

@@ -9,8 +9,6 @@ require_once 'includes/functions.php';
 $restaurants = get_restaurants();
 $reservations = get_reservations();
 
-// TODO: Check if the user is logged in or not (if user authentication)
-
 // Include header template
 include 'templates/header.php';
 ?>
@@ -46,6 +44,7 @@ include 'templates/header.php';
                         <p>Date: <?php echo htmlspecialchars($reservation['date']); ?></p>
                         <p>Time: <?php echo htmlspecialchars($reservation['time']); ?></p>
                         <p>Guests: <?php echo htmlspecialchars($reservation['guests']); ?></p>
+                        <p>Restaurant: <?php echo htmlspecialchars($reservation['restaurant_id']); ?></p>
                     </li>
                 <?php endforeach; ?>
             </ul>

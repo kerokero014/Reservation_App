@@ -167,6 +167,35 @@ function add_restaurant($restaurant_name, $restaurant_location, $restaurant_emai
     $conn->close();
 }
 
+//Function to add a User
+function add_user($name, $email, $password)
+{
+    // Establish database connection
+    $conn = connect_db();
+
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Prepare SQL query
+    $sql = "INSERT INTO reservation.user (name, email, password) VALUES (?, ?, ?)";
+
+    // Prepare the SQL statement for execution
+    $stmt = $conn->prepare($sql);
+
+    // Bind the parameters to the SQL statement
+    $stmt->bind_param("sss", $name, $email, $hashed_password);
+
+    // Execute the SQL statement
+    $stmt->execute();
+
+    // Close the statement
+    $stmt->close();
+
+    // Close the database connection
+    $conn->close();
+}
+
+
 
 // Function to sanitize input data
 function sanitize_input($data)
