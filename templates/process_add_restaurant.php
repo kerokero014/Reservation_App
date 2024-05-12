@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     add_restaurant($restaurant_name, $restaurant_location, $restaurant_email, $capacity);
 
     // Redirect user to a success page or to another page
-    header("Location: index.php");
+    header("Location: ./index.php");
     exit();
 } else {
     // If the form was not submitted, redirect user to the homepage or an error page
-    header("Location: index.php");
+    header("Location: ./index.php");
     exit();
 }
