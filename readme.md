@@ -16,10 +16,3 @@ This is an web application where it allows you to reserve a table in your favori
 * PHP 8.1.1
 * Github
 * Javascript, CSS, & MYSQL
-
-#
-### Useful Links
-
-* [link]()
-* [link]()
-* [link]()
